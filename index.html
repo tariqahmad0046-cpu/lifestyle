@@ -1,0 +1,383 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lifestyle Aesthetics - Modern Care. Lasting Beauty.</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap">
+<style>
+:root{
+  --white:#ffffff;
+  --ice:#f0f5fb;
+  --blue:#1d5fa8;
+  --blue-dark:#154a86;
+  --sky:#9cc3ea;
+  --navy:#0e2a47;
+  --text:#34465a;
+  --line:#d8e3f0;
+  --display:"Cormorant Garamond",serif;
+  --body:"Jost","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html.lock{overflow:hidden}
+body{margin:0;background:var(--white);color:var(--text);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65}
+h1,h2,h3{font-family:var(--display);font-weight:600;color:var(--navy);line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--blue)}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section,main>div{scroll-margin-top:80px}
+.band{padding-block:clamp(52px,8vw,92px)}
+.band.ice{background:var(--ice)}
+.band.navy{background:var(--navy);color:#dbe6f3}
+.band.navy h2,.band.navy h3{color:var(--white)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#e2ecf8;color:var(--blue);border-radius:20px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:14px;font-family:var(--body)}
+.navy .eyebrow{background:rgba(255,255,255,.1);color:var(--sky)}
+.h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-top:12px}
+.lede{margin-top:14px;max-width:560px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:25px;border:1px solid var(--blue);background:var(--blue);color:var(--white);font:600 .86rem/1 var(--body);letter-spacing:.04em;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s}
+.btn:hover{background:var(--blue-dark);border-color:var(--blue-dark);box-shadow:0 4px 14px rgba(29,95,168,.25)}
+.btn.outline{background:var(--white);color:var(--blue);border-color:var(--blue)}
+.btn.outline:hover{background:var(--ice);box-shadow:none}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* header exactly matching screenshot */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(14,42,71,.04)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.brand{font-family:var(--body);font-weight:600;font-size:1.15rem;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand-logo{width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.brand-logo svg{width:100%;height:100%;fill:var(--blue)}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text span:first-child{font-size:.95rem;font-weight:600;color:var(--navy);letter-spacing:.02em}
+.brand-text span:last-child{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--navy);letter-spacing:.05em}
+.dnav{display:flex;align-items:center;gap:18px}
+.dnav a{font-size:.84rem;font-weight:500;color:var(--text);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s}
+.dnav a:hover{color:var(--blue);border-color:var(--blue)}
+.dnav .btn{min-height:40px;padding:0 20px;font-size:.82rem;color:var(--white);border-radius:22px;border:none;background:var(--blue)}
+.dnav .btn:hover{background:var(--blue-dark)}
+
+.menu-btn{display:none;width:40px;height:40px;border-radius:50%;border:0;background:var(--white);box-shadow:0 1px 8px rgba(14,42,71,.15);cursor:pointer;place-content:center;gap:4px;padding:0}
+.menu-btn span{display:block;width:17px;height:2px;background:var(--navy);border-radius:2px}
+
+/* drawer (mobile menu) */
+.backdrop{position:fixed;inset:0;background:rgba(14,42,71,.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s linear .3s;z-index:70}
+.backdrop.open{opacity:1;visibility:visible;transition:opacity .3s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(280px,78vw);background:var(--white);box-shadow:-8px 0 30px rgba(14,42,71,.18);z-index:80;transform:translateX(100%);visibility:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),visibility 0s linear .3s;display:flex;flex-direction:column;padding:20px;overflow-y:auto}
+.drawer.open{transform:none;visibility:visible}
+.d-top{display:flex;align-items:center;justify-content:space-between;height:48px;margin-bottom:12px}
+.x-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--navy);font-size:1.4rem;line-height:1;cursor:pointer}
+.drawer ul{list-style:none;margin:0;padding:0}
+.drawer li a{display:flex;align-items:center;min-height:46px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.95rem;font-weight:500;color:var(--navy)}
+.drawer .btn{margin-top:20px;width:100%}
+
+/* Hero section matching 2nd reference image exactly */
+.hero{background:linear-gradient(180deg,#e8f3fc 0%,#f4f8fd 60%,var(--white) 100%);padding-block:clamp(40px,6vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-family:var(--display);font-size:clamp(2.6rem,5.5vw,4.1rem);margin-top:10px;color:var(--navy);font-weight:700;letter-spacing:-0.02em}
+.hero .lede{font-size:1.1rem;margin-top:14px;color:#475569;font-weight:500;font-family:var(--body)}
+.hero .btn-row{margin-top:26px}
+.meta{margin-top:26px;display:flex;gap:10px 22px;flex-wrap:wrap;font-size:.84rem;color:var(--text)}
+.meta span{display:flex;align-items:center;gap:8px}
+.meta i{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block}
+
+.hero-img{position:relative}
+.hero-img img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:14px;box-shadow:0 18px 44px rgba(29,95,168,.18);border:4px solid var(--white)}
+
+/* Feature bar below hero */
+.feature-bar{background:var(--white);padding:26px 0;border-bottom:1px solid var(--line)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.feature-item{padding:10px;border-right:1px solid var(--line)}
+.feature-item:last-child{border-right:none}
+.feature-item svg{width:30px;height:30px;stroke:var(--blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
+.feature-item span{display:block;font-weight:600;font-size:0.92rem;color:var(--navy)}
+
+/* about */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,72px);align-items:start}
+.facts{margin:0;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:500;padding-top:3px}
+.facts dd{margin:0;text-align:right;color:var(--navy)}
+
+/* treatments */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin-top:36px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(14,42,71,.05);transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:0 10px 26px rgba(14,42,71,.12);transform:translateY(-2px)}
+.card .ph{aspect-ratio:16/9;background:var(--ice);display:flex}
+.card .ph img,.card .ph svg{width:100%;height:100%;object-fit:cover;display:block}
+.card .ph svg{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;padding:14px}
+.card .txt{padding:18px}
+.card h3{font-size:1.35rem}
+.card p{font-size:.9rem;margin-top:6px}
+.note{margin-top:26px;font-size:.86rem;max-width:640px}
+
+/* services band */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,36px);margin-top:34px}
+.cats>*{min-width:0;border-top:1px solid var(--sky);padding-top:16px}
+.cats h3{font-size:1.3rem}
+.cats ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;font-size:.92rem}
+
+/* booking */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,72px);align-items:start}
+.big{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,4.4vw,2.5rem);color:var(--blue);margin-top:22px}
+.formcard{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3.5vw,32px);box-shadow:0 10px 30px rgba(14,42,71,.08)}
+form{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--navy);margin-bottom:6px}
+input,select,textarea{width:100%;background:var(--white);border:1px solid var(--line);border-radius:6px;color:var(--navy);font:400 1rem var(--body);padding:11px 12px;min-height:44px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+textarea{resize:vertical;min-height:88px}
+#out{display:none;border:1px solid var(--sky);background:var(--ice);border-radius:6px;padding:14px;font-size:.92rem}
+#out.on{display:block}
+#out .btn{margin-top:12px}
+
+/* reviews & map */
+.empty{margin-top:32px;border:1px dashed var(--sky);border-radius:10px;background:var(--white);padding:clamp(22px,4vw,36px);max-width:640px}
+.map{border:1px solid var(--line);border-radius:10px;background:var(--white);overflow:hidden;aspect-ratio:16/10}
+.map svg{display:block;width:100%;height:100%}
+.map .blk{fill:var(--ice)}
+.map .st{stroke:var(--line);stroke-width:7;fill:none;stroke-linecap:round}
+.map .st2{stroke:var(--line);stroke-width:3;fill:none}
+.map .pin{fill:var(--blue);stroke:var(--white);stroke-width:2}
+.map .lbl{fill:var(--navy);font:500 13px var(--body)}
+.map .sub{fill:var(--text);font:400 11px var(--body)}
+
+/* legal & footer */
+details{border-top:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--navy)}
+.tag{display:inline-block;margin-left:8px;font:500 .64rem var(--body);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--sky);color:var(--blue);border-radius:4px;padding:2px 7px}
+footer{background:var(--navy);color:#c9d8e9;padding-block:44px 28px}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+footer .brand{color:var(--white)}footer .brand b{color:var(--sky)}
+footer h3{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--sky);margin-bottom:12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
+.copy{margin-top:32px;padding-top:18px;border-top:1px solid rgba(156,195,234,.25);font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:900px){
+  .dnav{display:none}
+  .menu-btn{display:grid}
+  .hero-grid,.split,.book{grid-template-columns:1fr}
+  .hero-img{order:-1}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .feature-item{border-right:none;border-bottom:1px solid var(--line);padding-bottom:16px}
+  .cats,.f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .row,.cats,.f-grid,.feature-grid{grid-template-columns:1fr}
+  .bar{height:64px}
+  .brand-text span:last-child{font-size:1.15rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+      </div>
+      <div class="brand-text">
+        <span>Lifestyle</span>
+        <span>Aesthetics</span>
+      </div>
+    </a>
+    <nav class="dnav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="#about">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#treatments">Gallery</a>
+      <a href="#reviews">Testimonials</a>
+      <a href="#contact">Blog</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#book">Book Appointment &rarr;</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+  <div class="d-top">
+    <a class="brand" href="#top" data-nav>
+      <div class="brand-text"><span>Lifestyle</span><span>Aesthetics</span></div>
+    </a>
+    <button class="x-btn" id="closeBtn" type="button" aria-label="Close menu">&times;</button>
+  </div>
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#top" data-nav>Home</a></li>
+      <li><a href="#about" data-nav>Services</a></li>
+      <li><a href="#about" data-nav>About Us</a></li>
+      <li><a href="#treatments" data-nav>Gallery</a></li>
+      <li><a href="#reviews" data-nav>Testimonials</a></li>
+      <li><a href="#contact" data-nav>Blog</a></li>
+      <li><a href="#contact" data-nav>Contact Us</a></li>
+    </ul>
+  </nav>
+  <a class="btn outline" href="https://wa.me/923154277053" target="_blank" rel="noopener" data-nav>WhatsApp Us</a>
+</aside>
+
+<main id="top">
+  <!-- Exact Hero Section matching 2nd screenshot -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Advanced Aesthetic &amp; Dental Clinic
+        </div>
+        <h1>Modern Care.<br>Lasting Beauty.</h1>
+        <p class="lede">Advanced Aesthetic &amp; Dental Treatments tailored to your individual beauty and wellness goals.</p>
+        <div class="btn-row">
+          <a class="btn" href="#book">Book Appointment &rarr;</a>
+          <a class="btn outline" href="#treatments">Our Services &rarr;</a>
+        </div>
+        <div class="meta">
+          <span><i></i>Mon to Sat, 12 PM to 9 PM</span>
+          <span><i></i>Gulshan-e-Iqbal, Block 7</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="img/hero.png" alt="Clinic Interior Lifestyle Aesthetics" width="736" height="480">
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature strip matching screenshot -->
+  <div class="feature-bar">
+    <div class="wrap feature-grid">
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2c2 3 5 5 5 9a5 5 0 0 1-10 0c0-4 3-6 5-9z"/></svg>
+        <span>Dental Aesthetics</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+        <span>Skin Care</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>Hair Transplant</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Aesthetic Treatments</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- All your existing sections remain exactly intact -->
+  <section class="band" id="about">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">About Us</p>
+        <h2 class="h2">Considered care, in a calm and clean setting.</h2>
+      </div>
+      <div>
+        <p>Lifestyle Aesthetics is a clinic in Gulshan-e-Iqbal, Karachi, offering skin, hair and aesthetic treatments. Every visit begins with a consultation, so you know what a treatment involves before you decide.</p>
+        <dl class="facts" style="margin-top:24px">
+          <div><dt>Open</dt><dd>Monday to Saturday<br>12:00 PM to 9:00 PM</dd></div>
+          <div><dt>Area</dt><dd>Gulshan-e-Iqbal, Block 7</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="band ice" id="treatments">
+    <div class="wrap">
+      <p class="eyebrow">Treatments</p>
+      <h2 class="h2">What we offer</h2>
+      <div class="grid">
+        <article class="card"><div class="ph"><img src="img/hydrafacial.jpg" alt="HydraFacial" loading="lazy"></div><div class="txt"><h3>HydraFacial</h3><p>A cleansing and hydrating facial treatment.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/laser.jpg" alt="Laser Hair Removal" loading="lazy"></div><div class="txt"><h3>Laser Hair Removal</h3><p>Laser treatment for unwanted hair.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/acne.jpg" alt="Acne Treatment" loading="lazy"></div><div class="txt"><h3>Acne Treatment</h3><p>Care plans for acne-prone skin.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/botox.jpg" alt="Botox & Fillers" loading="lazy"></div><div class="txt"><h3>Botox &amp; Fillers</h3><p>Injectable treatments, by consultation only.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="book">
+    <div class="wrap book">
+      <div>
+        <p class="eyebrow">Book Appointment</p>
+        <h2 class="h2">Book your consultation</h2>
+        <p class="lede">Fill in the form to send a ready message via WhatsApp to the clinic.</p>
+        <p class="big">0315 4277053</p>
+      </div>
+      <div class="formcard">
+        <form id="f">
+          <div class="row">
+            <div><label for="n">Full name</label><input id="n" placeholder="Your name"></div>
+            <div><label for="p">Phone</label><input id="p" type="tel" placeholder="03XX XXXXXXX"></div>
+          </div>
+          <div><label for="m">Message</label><textarea id="m" placeholder="Anything we should know"></textarea></div>
+          <div><button class="btn" type="submit" style="width:100%">Prepare WhatsApp Message</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="brand" href="#top">
+          <div class="brand-text"><span>Lifestyle</span><span>Aesthetics</span></div>
+        </a>
+        <p style="margin-top:12px;max-width:300px">Skin, hair and aesthetic treatments in Gulshan-e-Iqbal, Karachi.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#book">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>0315 4277053</li>
+          <li>Dawood Avenue, Block 7, Karachi</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>&copy; 2026 Lifestyle Aesthetics</span><span>All rights reserved</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer'),back=document.getElementById('backdrop'),closeBtn=document.getElementById('closeBtn');
+  function open(){drawer.classList.add('open');back.classList.add('open')}
+  function close(){drawer.classList.remove('open');back.classList.remove('open')}
+  if(btn) btn.addEventListener('click',open);
+  if(closeBtn) closeBtn.addEventListener('click',close);
+  if(back) back.addEventListener('click',close);
+
+  var f = document.getElementById('f');
+  if(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('n').value.trim();
+      var phone = document.getElementById('p').value.trim();
+      var msg = document.getElementById('m').value.trim();
+      if(!name || !phone){ alert('Please enter name and phone number'); return; }
+      var text = "Hello, I would like to book an appointment.\nName: "+name+"\nPhone: "+phone+"\nMessage: "+msg;
+      window.open('https://wa.me/923154277053?text='+encodeURIComponent(text), '_blank');
+    });
+  }
+})();
+</script>
+</body>
+</html>
