@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Lifestyle Aesthetics - Modern Care. Lasting Beauty.</title>
+<title>Lifestyle Aesthetics</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap">
 <style>
 :root{
   --white:#ffffff;
@@ -16,7 +16,7 @@
   --navy:#0e2a47;
   --text:#34465a;
   --line:#d8e3f0;
-  --display:"Cormorant Garamond",serif;
+  --display:"Cormorant Garamond","Times New Roman",serif;
   --body:"Jost","Helvetica Neue",Arial,sans-serif;
   color-scheme:light;
 }
@@ -31,27 +31,30 @@ img{max-width:100%}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
 .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-section,main>div{scroll-margin-top:80px}
+section,main>div{scroll-margin-top:64px}
 .band{padding-block:clamp(52px,8vw,92px)}
 .band.ice{background:var(--ice)}
 .band.navy{background:var(--navy);color:#dbe6f3}
 .band.navy h2,.band.navy h3{color:var(--white)}
 
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#e2ecf8;color:var(--blue);border-radius:20px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:14px;font-family:var(--body)}
-.navy .eyebrow{background:rgba(255,255,255,.1);color:var(--sky)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--blue)}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--blue)}
+.navy .eyebrow{color:var(--sky)}.navy .eyebrow::before{background:var(--sky)}
 .h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-top:12px}
 .lede{margin-top:14px;max-width:560px}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:25px;border:1px solid var(--blue);background:var(--blue);color:var(--white);font:600 .86rem/1 var(--body);letter-spacing:.04em;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:6px;border:1px solid var(--blue);background:var(--blue);color:var(--white);font:500 .86rem/1 var(--body);letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s}
 .btn:hover{background:var(--blue-dark);border-color:var(--blue-dark);box-shadow:0 4px 14px rgba(29,95,168,.25)}
-.btn.outline{background:var(--white);color:var(--blue);border-color:var(--blue)}
+.btn.outline{background:var(--white);color:var(--blue)}
 .btn.outline:hover{background:var(--ice);box-shadow:none}
+.btn.light{background:var(--white);color:var(--navy);border-color:var(--white)}
+.btn.light:hover{background:var(--ice)}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap}
 
-/* header exactly matching screenshot */
+/* header */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(14,42,71,.04)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
 .brand{font-family:var(--body);font-weight:600;font-size:1.15rem;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
 .brand-logo{width:38px;height:38px;display:flex;align-items:center;justify-content:center}
@@ -59,31 +62,36 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rg
 .brand-text{display:flex;flex-direction:column;line-height:1.15}
 .brand-text span:first-child{font-size:.95rem;font-weight:600;color:var(--navy);letter-spacing:.02em}
 .brand-text span:last-child{font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--navy);letter-spacing:.05em}
-.dnav{display:flex;align-items:center;gap:18px}
-.dnav a{font-size:.84rem;font-weight:500;color:var(--text);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s}
+
+.dnav{display:flex;align-items:center;gap:22px}
+.dnav a{font-size:.8rem;font-weight:500;letter-spacing:.04em;color:var(--text);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
 .dnav a:hover{color:var(--blue);border-color:var(--blue)}
-.dnav .btn{min-height:40px;padding:0 20px;font-size:.82rem;color:var(--white);border-radius:22px;border:none;background:var(--blue)}
-.dnav .btn:hover{background:var(--blue-dark)}
+.dnav .btn{min-height:38px;padding:0 16px;font-size:.78rem;color:var(--white);border-bottom:none}
+.dnav .btn:hover{color:var(--white)}
 
-.menu-btn{display:none;width:40px;height:40px;border-radius:50%;border:0;background:var(--white);box-shadow:0 1px 8px rgba(14,42,71,.15);cursor:pointer;place-content:center;gap:4px;padding:0}
-.menu-btn span{display:block;width:17px;height:2px;background:var(--navy);border-radius:2px}
+.menu-btn{display:none;width:40px;height:40px;border-radius:50%;border:0;background:var(--white);box-shadow:0 1px 8px rgba(14,42,71,.22),0 0 0 1px var(--line);cursor:pointer;place-content:center;gap:4px;padding:0;transition:transform .25s,box-shadow .25s}
+.menu-btn span{display:block;width:17px;height:2px;background:var(--navy);border-radius:2px;transition:transform .3s,opacity .3s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-/* drawer (mobile menu) */
+/* drawer */
 .backdrop{position:fixed;inset:0;background:rgba(14,42,71,.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s linear .3s;z-index:70}
 .backdrop.open{opacity:1;visibility:visible;transition:opacity .3s}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(280px,78vw);background:var(--white);box-shadow:-8px 0 30px rgba(14,42,71,.18);z-index:80;transform:translateX(100%);visibility:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),visibility 0s linear .3s;display:flex;flex-direction:column;padding:20px;overflow-y:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(270px,78vw);background:var(--white);box-shadow:-8px 0 30px rgba(14,42,71,.18);z-index:80;transform:translateX(100%);visibility:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),visibility 0s linear .3s;display:flex;flex-direction:column;padding:20px;overflow-y:auto}
 .drawer.open{transform:none;visibility:visible}
-.d-top{display:flex;align-items:center;justify-content:space-between;height:48px;margin-bottom:12px}
+.d-top{display:flex;align-items:center;justify-content:space-between;height:48px;margin-bottom:8px}
 .x-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--navy);font-size:1.4rem;line-height:1;cursor:pointer}
 .drawer ul{list-style:none;margin:0;padding:0}
-.drawer li a{display:flex;align-items:center;min-height:46px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.95rem;font-weight:500;color:var(--navy)}
-.drawer .btn{margin-top:20px;width:100%}
+.drawer li a{display:flex;align-items:center;min-height:46px;padding:0 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.95rem;font-weight:500;color:var(--navy)}
+.drawer .btn{margin-top:18px;width:100%}
+.drawer .small{margin-top:14px;font-size:.82rem;color:var(--text)}
 
-/* Hero section matching 2nd reference image exactly */
-.hero{background:linear-gradient(180deg,#e8f3fc 0%,#f4f8fd 60%,var(--white) 100%);padding-block:clamp(40px,6vw,72px)}
+/* hero */
+.hero{background:linear-gradient(180deg,#e8f3fc 0%,#f4f8fd 60%,var(--white) 100%);padding-block:clamp(36px,6vw,72px)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
-.hero h1{font-family:var(--display);font-size:clamp(2.6rem,5.5vw,4.1rem);margin-top:10px;color:var(--navy);font-weight:700;letter-spacing:-0.02em}
-.hero .lede{font-size:1.1rem;margin-top:14px;color:#475569;font-weight:500;font-family:var(--body)}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);margin-top:14px}
+.hero .lede{font-size:1.04rem;margin-top:16px}
 .hero .btn-row{margin-top:26px}
 .meta{margin-top:26px;display:flex;gap:10px 22px;flex-wrap:wrap;font-size:.84rem;color:var(--text)}
 .meta span{display:flex;align-items:center;gap:8px}
@@ -91,14 +99,6 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rg
 
 .hero-img{position:relative}
 .hero-img img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:14px;box-shadow:0 18px 44px rgba(29,95,168,.18);border:4px solid var(--white)}
-
-/* Feature bar below hero */
-.feature-bar{background:var(--white);padding:26px 0;border-bottom:1px solid var(--line)}
-.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-.feature-item{padding:10px;border-right:1px solid var(--line)}
-.feature-item:last-child{border-right:none}
-.feature-item svg{width:30px;height:30px;stroke:var(--blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
-.feature-item span{display:block;font-weight:600;font-size:0.92rem;color:var(--navy)}
 
 /* about */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,72px);align-items:start}
@@ -114,7 +114,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rg
 .card .ph{aspect-ratio:16/9;background:var(--ice);display:flex}
 .card .ph img,.card .ph svg{width:100%;height:100%;object-fit:cover;display:block}
 .card .ph svg{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;padding:14px}
-.card .txt{padding:18px}
+.card .txt{padding:18px 18px 20px}
 .card h3{font-size:1.35rem}
 .card p{font-size:.9rem;margin-top:6px}
 .note{margin-top:26px;font-size:.86rem;max-width:640px}
@@ -127,7 +127,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rg
 
 /* booking */
 .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,72px);align-items:start}
-.big{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,4.4vw,2.5rem);color:var(--blue);margin-top:22px}
+.big{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,4.4vw,2.5rem);color:var(--blue);margin-top:22px;word-break:break-word}
 .formcard{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3.5vw,32px);box-shadow:0 10px 30px rgba(14,42,71,.08)}
 form{display:grid;gap:16px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -149,42 +149,49 @@ textarea{resize:vertical;min-height:88px}
 .map .pin{fill:var(--blue);stroke:var(--white);stroke-width:2}
 .map .lbl{fill:var(--navy);font:500 13px var(--body)}
 .map .sub{fill:var(--text);font:400 11px var(--body)}
+.map-note{margin-top:8px;font-size:.78rem}
 
-/* legal & footer */
+/* legal */
 details{border-top:1px solid var(--line);padding:14px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--navy)}
-.tag{display:inline-block;margin-left:8px;font:500 .64rem var(--body);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--sky);color:var(--blue);border-radius:4px;padding:2px 7px}
+.tag{display:inline-block;margin-left:8px;font:500 .64rem var(--body);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--sky);color:var(--blue);border-radius:4px;padding:2px 7px;vertical-align:middle}
+details p{margin-top:10px;font-size:.92rem;max-width:760px}
+
+/* footer */
 footer{background:var(--navy);color:#c9d8e9;padding-block:44px 28px}
 .f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
 footer .brand{color:var(--white)}footer .brand b{color:var(--sky)}
-footer h3{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--sky);margin-bottom:12px}
+footer h3{font-family:var(--body);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--sky);margin-bottom:12px}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
-.copy{margin-top:32px;padding-top:18px;border-top:1px solid rgba(156,195,234,.25);font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.copy{margin-top:32px;padding-top:18px;border-top:1px solid rgba(156,195,234,.25);font-size:.82rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:900px){
   .dnav{display:none}
   .menu-btn{display:grid}
   .hero-grid,.split,.book{grid-template-columns:1fr}
   .hero-img{order:-1}
-  .feature-grid{grid-template-columns:repeat(2,1fr)}
-  .feature-item{border-right:none;border-bottom:1px solid var(--line);padding-bottom:16px}
   .cats,.f-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){
-  .row,.cats,.f-grid,.feature-grid{grid-template-columns:1fr}
+  .row,.cats,.f-grid{grid-template-columns:1fr}
   .bar{height:64px}
-  .brand-text span:last-child{font-size:1.15rem}
 }
 </style>
 </head>
 <body>
 
+<!-- Header with Updated Lotus Flower Logo Icon -->
 <header>
   <div class="wrap bar">
     <a class="brand" href="#top">
       <div class="brand-logo">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C12 2 8 7 8 11C8 13.21 9.79 15 12 15C14.21 15 16 13.21 16 11C16 7 12 2 12 2Z"/>
+          <path d="M12 13C9 13 5 14.5 4 17C3.25 18.88 4.5 21 7 21C9.5 21 11 19 12 17.5C13 19 14.5 21 17 21C19.5 21 20.75 18.88 20 17C19 14.5 15 13 12 13Z"/>
+          <path d="M12 15C9.5 15 6.5 16 5 18C4.5 18.7 5 19.5 6 19.5C7.5 19.5 9 18.5 10.5 18.5C11.3 18.5 11.7 18 12 17.5C12.3 18 12.7 18.5 13.5 18.5C15 18.5 16.5 19.5 18 19.5C19 19.5 19.5 18.7 19 18C17.5 16 14.5 15 12 15Z"/>
+        </svg>
       </div>
       <div class="brand-text">
         <span>Lifestyle</span>
@@ -193,13 +200,12 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
     </a>
     <nav class="dnav" aria-label="Main">
       <a href="#top">Home</a>
-      <a href="#about">Services</a>
       <a href="#about">About Us</a>
-      <a href="#treatments">Gallery</a>
-      <a href="#reviews">Testimonials</a>
-      <a href="#contact">Blog</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#book">Book Appointment &rarr;</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#location">Location</a>
+      <a class="btn" href="#book">Book Appointment</a>
     </nav>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
   </div>
@@ -209,38 +215,38 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
   <div class="d-top">
     <a class="brand" href="#top" data-nav>
-      <div class="brand-text"><span>Lifestyle</span><span>Aesthetics</span></div>
+      <div class="brand-logo" style="width:28px;height:28px;display:inline-block;vertical-align:middle;margin-right:6px;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 8 7 8 11C8 13.21 9.79 15 12 15C14.21 15 16 13.21 16 11C16 7 12 2 12 2Z"/><path d="M12 13C9 13 5 14.5 4 17C3.25 18.88 4.5 21 7 21C9.5 21 11 19 12 17.5C13 19 14.5 21 17 21C19.5 21 20.75 18.88 20 17C19 14.5 15 13 12 13Z"/></svg>
+      </div>
+      <div class="brand-text" style="display:inline-block;"><span>Lifestyle</span><span>Aesthetics</span></div>
     </a>
     <button class="x-btn" id="closeBtn" type="button" aria-label="Close menu">&times;</button>
   </div>
   <nav aria-label="Mobile">
     <ul>
       <li><a href="#top" data-nav>Home</a></li>
-      <li><a href="#about" data-nav>Services</a></li>
       <li><a href="#about" data-nav>About Us</a></li>
-      <li><a href="#treatments" data-nav>Gallery</a></li>
-      <li><a href="#reviews" data-nav>Testimonials</a></li>
-      <li><a href="#contact" data-nav>Blog</a></li>
+      <li><a href="#treatments" data-nav>Treatments</a></li>
+      <li><a href="#book" data-nav>Book Appointment</a></li>
+      <li><a href="#reviews" data-nav>Reviews</a></li>
       <li><a href="#contact" data-nav>Contact Us</a></li>
+      <li><a href="#location" data-nav>Location</a></li>
     </ul>
   </nav>
   <a class="btn outline" href="https://wa.me/923154277053" target="_blank" rel="noopener" data-nav>WhatsApp Us</a>
+  <p class="small">Mon to Sat, 12:00 PM to 9:00 PM<br>0315 4277053</p>
 </aside>
 
 <main id="top">
-  <!-- Exact Hero Section matching 2nd screenshot -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          Advanced Aesthetic &amp; Dental Clinic
-        </div>
+        <p class="eyebrow">Advanced Aesthetic &amp; Dental Clinic</p>
         <h1>Modern Care.<br>Lasting Beauty.</h1>
         <p class="lede">Advanced Aesthetic &amp; Dental Treatments tailored to your individual beauty and wellness goals.</p>
         <div class="btn-row">
-          <a class="btn" href="#book">Book Appointment &rarr;</a>
-          <a class="btn outline" href="#treatments">Our Services &rarr;</a>
+          <a class="btn" href="#book">Book Appointment</a>
+          <a class="btn outline" href="https://wa.me/923154277053" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
         <div class="meta">
           <span><i></i>Mon to Sat, 12 PM to 9 PM</span>
@@ -248,34 +254,11 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
         </div>
       </div>
       <div class="hero-img">
-        <img src="img/hero.png" alt="Clinic Interior Lifestyle Aesthetics" width="736" height="480">
+        <img src="img/hero.png" alt="Modern clinic interior with dental chair and equipment" width="736" height="480">
       </div>
     </div>
   </section>
 
-  <!-- Feature strip matching screenshot -->
-  <div class="feature-bar">
-    <div class="wrap feature-grid">
-      <div class="feature-item">
-        <svg viewBox="0 0 24 24"><path d="M12 2c2 3 5 5 5 9a5 5 0 0 1-10 0c0-4 3-6 5-9z"/></svg>
-        <span>Dental Aesthetics</span>
-      </div>
-      <div class="feature-item">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
-        <span>Skin Care</span>
-      </div>
-      <div class="feature-item">
-        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <span>Hair Transplant</span>
-      </div>
-      <div class="feature-item">
-        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Aesthetic Treatments</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- All your existing sections remain exactly intact -->
   <section class="band" id="about">
     <div class="wrap split">
       <div>
@@ -284,8 +267,10 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
       </div>
       <div>
         <p>Lifestyle Aesthetics is a clinic in Gulshan-e-Iqbal, Karachi, offering skin, hair and aesthetic treatments. Every visit begins with a consultation, so you know what a treatment involves before you decide.</p>
+        <p>Treatments are planned around your skin, your goals and your schedule.</p>
         <dl class="facts" style="margin-top:24px">
           <div><dt>Open</dt><dd>Monday to Saturday<br>12:00 PM to 9:00 PM</dd></div>
+          <div><dt>Sunday</dt><dd>Closed</dd></div>
           <div><dt>Area</dt><dd>Gulshan-e-Iqbal, Block 7</dd></div>
         </dl>
       </div>
@@ -296,11 +281,33 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
     <div class="wrap">
       <p class="eyebrow">Treatments</p>
       <h2 class="h2">What we offer</h2>
+      <p class="lede">Book a consultation and the clinic will advise which treatment suits you.</p>
       <div class="grid">
-        <article class="card"><div class="ph"><img src="img/hydrafacial.jpg" alt="HydraFacial" loading="lazy"></div><div class="txt"><h3>HydraFacial</h3><p>A cleansing and hydrating facial treatment.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/hydrafacial.jpg" alt="HydraFacial treatment" loading="lazy"></div><div class="txt"><h3>HydraFacial</h3><p>A cleansing and hydrating facial treatment.</p></div></article>
         <article class="card"><div class="ph"><img src="img/laser.jpg" alt="Laser Hair Removal" loading="lazy"></div><div class="txt"><h3>Laser Hair Removal</h3><p>Laser treatment for unwanted hair.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/acne.jpg" alt="Skin Whitening Treatment" loading="lazy"></div><div class="txt"><h3>Skin Whitening Treatment</h3><p>Skin brightening treatment, planned at consultation.</p></div></article>
         <article class="card"><div class="ph"><img src="img/acne.jpg" alt="Acne Treatment" loading="lazy"></div><div class="txt"><h3>Acne Treatment</h3><p>Care plans for acne-prone skin.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/peel.jpg" alt="Chemical Peels" loading="lazy"></div><div class="txt"><h3>Chemical Peels</h3><p>Exfoliating peels for skin texture and tone.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/prp.jpg" alt="PRP Treatment" loading="lazy"></div><div class="txt"><h3>PRP Treatment</h3><p>Platelet-rich plasma treatment for skin.</p></div></article>
         <article class="card"><div class="ph"><img src="img/botox.jpg" alt="Botox & Fillers" loading="lazy"></div><div class="txt"><h3>Botox &amp; Fillers</h3><p>Injectable treatments, by consultation only.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/rejuvenation.jpg" alt="Skin Rejuvenation" loading="lazy"></div><div class="txt"><h3>Skin Rejuvenation</h3><p>Treatments to refresh dull or tired-looking skin.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/weight-loss.jpg" alt="Weight Loss Injections" loading="lazy"></div><div class="txt"><h3>Weight Loss Injections</h3><p>Available after a consultation.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/hair-transplant.jpg" alt="Hair Transplant" loading="lazy"></div><div class="txt"><h3>Hair Transplant</h3><p>Hair restoration, assessed at consultation.</p></div></article>
+        <article class="card"><div class="ph"><img src="img/high-frequency.jpg" alt="High Frequency Treatment" loading="lazy"></div><div class="txt"><h3>High Frequency Treatment</h3><p>A skin treatment using a high frequency device.</p></div></article>
+      </div>
+      <p class="note">Availability and suitability of every treatment are confirmed by the clinic at your consultation.</p>
+    </div>
+  </section>
+
+  <section class="band navy" id="services">
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2 class="h2">Care for skin, hair and body</h2>
+      <div class="cats">
+        <div><h3>Skin care</h3><ul><li>HydraFacial</li><li>Acne Treatment</li><li>Chemical Peels</li><li>Skin Whitening</li><li>Skin Rejuvenation</li><li>High Frequency</li></ul></div>
+        <div><h3>Hair</h3><ul><li>Laser Hair Removal</li><li>Hair Transplant</li><li>PRP Treatment</li></ul></div>
+        <div><h3>Injectables</h3><ul><li>Botox</li><li>Fillers</li><li>PRP Treatment</li></ul></div>
+        <div><h3>Weight management</h3><ul><li>Weight Loss Injections</li><li>Consultation first</li></ul></div>
       </div>
     </div>
   </section>
@@ -310,19 +317,113 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
       <div>
         <p class="eyebrow">Book Appointment</p>
         <h2 class="h2">Book your consultation</h2>
-        <p class="lede">Fill in the form to send a ready message via WhatsApp to the clinic.</p>
+        <p class="lede">Fill in the form and it opens as a ready-to-send WhatsApp message to the clinic. Or message us directly.</p>
         <p class="big">0315 4277053</p>
+        <p style="font-size:.9rem">Phone and WhatsApp</p>
+        <div class="btn-row" style="margin-top:20px"><a class="btn outline" href="https://wa.me/923154277053" target="_blank" rel="noopener">Open WhatsApp</a></div>
       </div>
       <div class="formcard">
-        <form id="f">
+        <form id="f" novalidate>
           <div class="row">
-            <div><label for="n">Full name</label><input id="n" placeholder="Your name"></div>
-            <div><label for="p">Phone</label><input id="p" type="tel" placeholder="03XX XXXXXXX"></div>
+            <div><label for="n">Full name</label><input id="n" autocomplete="name" placeholder="Your name"></div>
+            <div><label for="p">Phone</label><input id="p" type="tel" autocomplete="tel" placeholder="03XX XXXXXXX"></div>
+          </div>
+          <div class="row">
+            <div><label for="s">Treatment</label>
+              <select id="s">
+                <option value="">Not sure yet</option>
+                <option>HydraFacial</option><option>Laser Hair Removal</option><option>Skin Whitening Treatment</option>
+                <option>Acne Treatment</option><option>Chemical Peels</option><option>PRP Treatment</option>
+                <option>Botox &amp; Fillers</option><option>Skin Rejuvenation</option><option>Weight Loss Injections</option>
+                <option>Hair Transplant</option><option>High Frequency Treatment</option>
+              </select></div>
+            <div><label for="d">Preferred day</label>
+              <select id="d"><option>Any day</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select></div>
           </div>
           <div><label for="m">Message</label><textarea id="m" placeholder="Anything we should know"></textarea></div>
-          <div><button class="btn" type="submit" style="width:100%">Prepare WhatsApp Message</button></div>
+          <div><button class="btn" type="submit">Prepare Message</button></div>
+          <div id="out" role="status" aria-live="polite"></div>
         </form>
       </div>
+    </div>
+  </section>
+
+  <section class="band ice" id="reviews">
+    <div class="wrap">
+      <p class="eyebrow">Reviews</p>
+      <h2 class="h2">What patients say</h2>
+      <div class="empty">
+        <h3>Patient reviews coming soon</h3>
+        <p>We publish only genuine reviews shared with the patient's permission. They will appear here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Contact Us</p>
+        <h2 class="h2">Visit or call the clinic</h2>
+        <div class="btn-row" style="margin-top:22px">
+          <a class="btn" href="#book">Book Appointment</a>
+          <a class="btn outline" href="https://wa.me/923154277053" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Address</dt><dd>Dawood Avenue, Flat G1,<br>Gulshan-e-Iqbal, Block 7,<br>Karachi, Sindh</dd></div>
+        <div><dt>Hours</dt><dd>Mon to Sat, 12:00 PM to 9:00 PM<br>Sunday closed</dd></div>
+        <div><dt>Phone / WhatsApp</dt><dd>0315 4277053</dd></div>
+        <div><dt>Social</dt><dd>Facebook and Instagram<br>links to be added</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band ice" id="location">
+    <div class="wrap book">
+      <div>
+        <p class="eyebrow">Location</p>
+        <h2 class="h2">Find us on the map</h2>
+        <p class="lede">Dawood Avenue, Flat G1, Gulshan-e-Iqbal, Block 7, Karachi, Sindh.</p>
+        <div class="btn-row" style="margin-top:22px">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dawood+Avenue+Flat+G1+Gulshan+e+Iqbal+Block+7+Karachi" target="_blank" rel="noopener">Open in Google Maps</a>
+          <a class="btn outline" href="https://www.google.com/maps/dir/?api=1&destination=Dawood+Avenue+Flat+G1+Gulshan+e+Iqbal+Block+7+Karachi" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+      <div>
+        <div class="map">
+          <svg viewBox="0 0 400 250" role="img" aria-label="Illustrative map showing the clinic location in Gulshan-e-Iqbal, Block 7">
+            <rect width="400" height="250" fill="#ffffff"/>
+            <rect class="blk" x="20" y="20" width="110" height="60"/><rect class="blk" x="150" y="20" width="90" height="60"/><rect class="blk" x="260" y="20" width="120" height="60"/>
+            <rect class="blk" x="20" y="105" width="110" height="55"/><rect class="blk" x="260" y="105" width="120" height="55"/>
+            <rect class="blk" x="20" y="185" width="110" height="45"/><rect class="blk" x="150" y="185" width="90" height="45"/><rect class="blk" x="260" y="185" width="120" height="45"/>
+            <path class="st" d="M0 92H400M0 172H400M140 0V250M250 0V250"/>
+            <path class="st2" d="M0 52H400M0 132H400M0 210H400M75 0V250M195 0V250M320 0V250"/>
+            <g transform="translate(195 122)"><path class="pin" d="M0 0c-10-14-16-22-16-30a16 16 0 0 1 32 0c0 8-6 16-16 30z"/><circle cx="0" cy="-30" r="5" fill="#ffffff"/></g>
+            <text class="lbl" x="216" y="92">Lifestyle Aesthetics</text>
+            <text class="sub" x="216" y="108">Dawood Avenue, Block 7</text>
+          </svg>
+        </div>
+        <p class="map-note">Illustrative map, not to scale. Use the buttons for exact directions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="legal">
+    <div class="wrap">
+      <p class="eyebrow">Policies</p>
+      <h2 class="h2" style="margin-bottom:24px">Legal information</h2>
+      <details>
+        <summary>Privacy Policy <span class="tag">Draft for clinic review</span></summary>
+        <p>We collect only the details you give us, such as your name, phone number and message, to reply to your enquiry and manage your appointment. We do not sell your details. Information shared on WhatsApp is also handled under WhatsApp's own terms. Contact the clinic to ask for your details to be corrected or removed.</p>
+      </details>
+      <details>
+        <summary>Medical Disclaimer <span class="tag">Draft for clinic review</span></summary>
+        <p>Content on this website is general information and is not medical advice. Results vary between people. Whether a treatment is suitable for you is decided by the clinic's qualified practitioner after a consultation. Do not delay seeking medical advice because of anything on this website.</p>
+      </details>
+      <details>
+        <summary>Patient Consent Policy <span class="tag">Draft for clinic review</span></summary>
+        <p>Before any treatment, the practitioner explains the procedure, expected outcome, possible risks and alternatives, and you give consent. You may ask questions or decline at any time. Consent is recorded by the clinic and is specific to the treatment discussed.</p>
+      </details>
     </div>
   </section>
 </main>
@@ -332,7 +433,10 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
     <div class="f-grid">
       <div>
         <a class="brand" href="#top">
-          <div class="brand-text"><span>Lifestyle</span><span>Aesthetics</span></div>
+          <div class="brand-logo" style="width:28px;height:28px;display:inline-block;vertical-align:middle;margin-right:6px;">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 8 7 8 11C8 13.21 9.79 15 12 15C14.21 15 16 13.21 16 11C16 7 12 2 12 2Z"/><path d="M12 13C9 13 5 14.5 4 17C3.25 18.88 4.5 21 7 21C9.5 21 11 19 12 17.5C13 19 14.5 21 17 21C19.5 21 20.75 18.88 20 17C19 14.5 15 13 12 13Z"/></svg>
+          </div>
+          <div class="brand-text" style="display:inline-block;"><span>Lifestyle</span><span>Aesthetics</span></div>
         </a>
         <p style="margin-top:12px;max-width:300px">Skin, hair and aesthetic treatments in Gulshan-e-Iqbal, Karachi.</p>
       </div>
@@ -342,41 +446,83 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
           <li><a href="#about">About Us</a></li>
           <li><a href="#treatments">Treatments</a></li>
           <li><a href="#book">Book Appointment</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
         </ul>
       </div>
       <div>
         <h3>Contact</h3>
         <ul>
           <li>0315 4277053</li>
-          <li>Dawood Avenue, Block 7, Karachi</li>
+          <li>Mon to Sat, 12:00 PM to 9:00 PM</li>
+          <li>Dawood Avenue, Flat G1, Gulshan-e-Iqbal, Block 7, Karachi</li>
         </ul>
       </div>
     </div>
-    <div class="copy"><span>&copy; 2026 Lifestyle Aesthetics</span><span>All rights reserved</span></div>
+    <div class="copy"><span>&copy; 2026 Lifestyle Aesthetics</span><span>Sunday closed</span></div>
   </div>
 </footer>
 
 <script>
 (function(){
-  var btn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer'),back=document.getElementById('backdrop'),closeBtn=document.getElementById('closeBtn');
-  function open(){drawer.classList.add('open');back.classList.add('open')}
-  function close(){drawer.classList.remove('open');back.classList.remove('open')}
-  if(btn) btn.addEventListener('click',open);
-  if(closeBtn) closeBtn.addEventListener('click',close);
-  if(back) back.addEventListener('click',close);
-
-  var f = document.getElementById('f');
+  var f=document.getElementById('f'),out=document.getElementById('out');
   if(f){
-    f.addEventListener('submit', function(e){
+    f.addEventListener('submit',function(e){
       e.preventDefault();
-      var name = document.getElementById('n').value.trim();
-      var phone = document.getElementById('p').value.trim();
-      var msg = document.getElementById('m').value.trim();
-      if(!name || !phone){ alert('Please enter name and phone number'); return; }
-      var text = "Hello, I would like to book an appointment.\nName: "+name+"\nPhone: "+phone+"\nMessage: "+msg;
-      window.open('https://wa.me/923154277053?text='+encodeURIComponent(text), '_blank');
+      var g=function(id){return document.getElementById(id).value.trim()};
+      var name=g('n'),phone=g('p');
+      out.className='on';out.innerHTML='';
+      if(!name||!phone){out.textContent='Please enter your name and phone number.';return}
+      var t='Hello, I would like to book a consultation at Lifestyle Aesthetics.\nName: '+name+'\nPhone: '+phone;
+      if(g('s'))t+='\nTreatment: '+g('s');
+      t+='\nPreferred day: '+g('d');
+      if(g('m'))t+='\nMessage: '+g('m');
+      var p=document.createElement('p');
+      p.textContent='Your message is ready. Tap the button to open WhatsApp and send it to the clinic.';
+      var a=document.createElement('a');
+      a.className='btn';a.target='_blank';a.rel='noopener';
+      a.href='https://wa.me/923154277053?text='+encodeURIComponent(t);
+      a.textContent='Send on WhatsApp';
+      out.appendChild(p);out.appendChild(a);
     });
   }
+  var btn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer'),back=document.getElementById('backdrop'),
+      closeBtn=document.getElementById('closeBtn'),root=document.documentElement,last=null,
+      page=document.querySelectorAll('header,main,footer');
+  function isOpen(){return drawer.classList.contains('open')}
+  function open(){
+    last=document.activeElement;
+    drawer.classList.add('open');back.classList.add('open');
+    drawer.setAttribute('aria-hidden','false');
+    btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Close menu');
+    root.classList.add('lock');
+    page.forEach(function(e){e.inert=true});
+    setTimeout(function(){closeBtn.focus()},60);
+  }
+  function close(restore){
+    drawer.classList.remove('open');back.classList.remove('open');
+    drawer.setAttribute('aria-hidden','true');
+    btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open menu');
+    root.classList.remove('lock');
+    page.forEach(function(e){e.inert=false});
+    if(restore!==false&&last&&last.focus)last.focus();
+  }
+  if(btn) btn.addEventListener('click',function(){isOpen()?close():open()});
+  if(closeBtn) closeBtn.addEventListener('click',function(){close()});
+  if(back) back.addEventListener('click',function(){close()});
+  if(drawer) drawer.querySelectorAll('[data-nav]').forEach(function(a){a.addEventListener('click',function(){close(false)})});
+  window.addEventListener('resize',function(){if(isOpen()&&window.innerWidth>900)close(false)});
+  document.addEventListener('keydown',function(e){
+    if(!isOpen())return;
+    if(e.key==='Escape'){e.preventDefault();close();return}
+    if(e.key==='Tab'){
+      var els=drawer.querySelectorAll('a[href],button:not([disabled])');
+      if(!els.length)return;
+      var first=els[0],lastEl=els[els.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();lastEl.focus()}
+      else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();first.focus()}
+    }
+  });
 })();
 </script>
 </body>
