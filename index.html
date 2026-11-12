@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Lifestyle Aesthetics | Aesthetic, Hair & Dental Clinic in Karachi</title>
 <meta name="description" content="Lifestyle Aesthetics in Gulshan-e-Iqbal, Karachi offers advanced Facial, Hair Restoration, and Dental Care treatments. Book your consultation today.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@300;400;500;600&display=swap">
 <style>
 :root{
   --white:#ffffff;
@@ -37,9 +37,7 @@ section{scroll-margin-top:72px}
 .band.navy{background:var(--navy);color:#dbe6f3}
 .band.navy h2,.band.navy h3{color:var(--white)}
 
-.eyebrow{display:flex;align-items:center;gap:8px;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--blue);margin-bottom:8px}
-.eyebrow::before{content:"";width:16px;height:1px;background:var(--blue)}
-.navy .eyebrow{color:var(--sky)}.navy .eyebrow::before{background:var(--sky)}
+.tag-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(29,95,168,.08);border:1px solid var(--sky);border-radius:20px;font-size:.75rem;font-weight:500;color:var(--blue);width:fit-content;margin-bottom:12px}
 .h2{font-size:clamp(1.75rem,3.4vw,2.5rem);margin-top:4px}
 .lede{margin-top:10px;font-size:.92rem;max-width:650px}
 
@@ -83,12 +81,13 @@ header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);border-
 .drawer li a{display:flex;align-items:center;min-height:42px;padding:0 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.9rem;font-weight:500;color:var(--navy)}
 .drawer .btn{margin-top:16px;width:100%}
 
-/* Hero Section - Image on top for mobile as requested */
+/* Hero Section */
 .hero{background:linear-gradient(180deg,#e8f3fc 0%,#f4f8fd 65%,var(--white) 100%);padding-top:24px;padding-bottom:32px}
 .hero-content{display:flex;flex-direction:column;gap:20px}
-.hero h1{font-size:clamp(2.1rem,8vw,3.3rem);margin-top:6px;letter-spacing:-0.02em}
-.tag-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(29,95,168,.08);border:1px solid var(--sky);border-radius:20px;font-size:.75rem;font-weight:500;color:var(--blue);width:fit-content}
-.hero-img{order:-1} /* Puts the image above text on mobile */
+.hero h1{font-size:clamp(2.3rem,8vw,3.6rem);margin-top:6px;letter-spacing:-0.02em;font-family:var(--display);font-weight:700;line-height:1.1}
+.hero h1 span.care{color:var(--navy)}
+.hero h1 span.beauty{color:var(--blue);font-style:italic}
+.hero-img{order:-1}
 .hero-img img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:14px;box-shadow:0 12px 30px rgba(29,95,168,.16);border:2px solid var(--white);background:var(--ice)}
 
 /* 4 Feature Icons Bar */
@@ -114,7 +113,7 @@ header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);border-
 .tab-btn:hover{border-color:var(--blue);color:var(--blue)}
 .tab-btn.active{background:var(--blue);color:var(--white);border-color:var(--blue);box-shadow:0 4px 10px rgba(29,95,168,.2)}
 
-/* Separated Treatment Category Sections with Picture Placeholders */
+/* Separated Treatment Category Sections */
 .treatment-category{margin-top:32px;scroll-margin-top:80px}
 .treatment-category.hidden{display:none}
 .cat-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;border-bottom:2px solid var(--sky);padding-bottom:8px}
@@ -184,7 +183,7 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
 /* Responsive Queries */
 @media (min-width:901px){
   .hero-content{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:32px}
-  .hero-img{order:0} /* Restores side-by-side desktop layout */
+  .hero-img{order:0}
 }
 @media (max-width:900px){
   .dnav{display:none}
@@ -259,20 +258,17 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
 <main id="top">
   <!-- Hero Section -->
   <section class="hero">
-    
+    <div class="wrap hero-content">
+      <div class="hero-img">
+        <img src="img/hero.png" alt="Modern clinic interior with dental chair" width="709" height="480" loading="eager">
+      </div>
+      <div>
         <div class="tag-pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           Advanced Aesthetic &amp; Dental Clinic
         </div>
-       
-      <div>
-        <h1>Modern Care.<br>Lasting Beauty.</h1>
-        <div class="wrap hero-content">
-      <div class="hero-img">
-        <img src="img/hero.png" alt="Modern clinic interior with dental chair" width="709" height="480" loading="eager">
-      </div>
+        <h1><span class="care">Modern Care.</span><br><span class="beauty">Lasting Beauty.</span></h1>
         <p class="lede">Advanced Aesthetic, Hair &amp; Dental Treatments tailored to your individual beauty and wellness goals.</p>
-         
         <div class="btn-row">
           <a class="btn" href="#book">Book Appointment &rarr;</a>
           <a class="btn outline" href="#treatments">Our Services &rarr;</a>
@@ -310,7 +306,7 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
     <div class="wrap">
       <div class="promo-card">
         <div class="promo-text">
-          <p class="eyebrow">Excellence in Care</p>
+          <p class="tag-pill" style="margin-bottom:8px">Excellence in Care</p>
           <h2>Your Beauty &amp; Smile, Our Priority.</h2>
           <p class="lede">Experience world-class aesthetic, hair and dental care with advanced technology and personalized treatment plans.</p>
           <div class="btn-row">
@@ -327,7 +323,7 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
   <!-- SEPARATED TREATMENTS SECTIONS -->
   <section class="band ice" id="treatments">
     <div class="wrap">
-      <p class="eyebrow">Our Specialized Services</p>
+      <p class="tag-pill" style="margin-bottom:8px">Our Specialized Services</p>
       <h2 class="h2">Explore Treatments by Category</h2>
       <p class="lede">Select a category below to view specialized Face, Hair, or Dental procedures. Every treatment begins with an expert consultation.</p>
 
@@ -660,7 +656,7 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
   <section class="band" id="about">
     <div class="wrap split">
       <div>
-        <p class="eyebrow">About Us</p>
+        <p class="tag-pill" style="margin-bottom:8px">About Us</p>
         <h2 class="h2">Considered care, in a calm and clean setting.</h2>
       </div>
       <div>
@@ -678,7 +674,7 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
   <section class="band ice" id="book">
     <div class="wrap book">
       <div>
-        <p class="eyebrow">Book Appointment</p>
+        <p class="tag-pill" style="margin-bottom:8px">Book Appointment</p>
         <h2 class="h2">Book your consultation</h2>
         <p class="lede">Fill in the form and it opens as a ready-to-send WhatsApp message directly to our clinic.</p>
         <p class="big">0315 4277053</p>
@@ -735,7 +731,7 @@ footer a{color:#c9d8e9;text-decoration:none}footer a:hover{color:var(--white)}
   <section class="band" id="location">
     <div class="wrap book">
       <div>
-        <p class="eyebrow">Location</p>
+        <p class="tag-pill" style="margin-bottom:8px">Location</p>
         <h2 class="h2">Find us on the map</h2>
         <p class="lede">Dawood Avenue, Flat G1, Gulshan-e-Iqbal, Block 7, Karachi, Sindh.</p>
         <div class="btn-row" style="margin-top:16px">
